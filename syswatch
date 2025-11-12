@@ -1,0 +1,14 @@
+#!/bin/bash
+echo "🌒 SYSTEM STATUS CHECK – $(date) 🌘"
+echo "-----------------------------------"
+echo -e "\n📦 Disk Space:"
+df -h / | awk 'NR==1 || /\/$/'
+echo -e "\n🧠 Memory:"
+free -h | awk 'NR==1 || NR==2'
+echo -e "\n🔥 CPU Load:"
+uptime | awk -F'load average:' '{ print "Load Average:" $2 }'
+echo -e "\n👹 Top 5 RAM-Hogs:"
+ps aux --sort=-%mem | awk 'NR<=6 {print $1, $2, $3, $4, $11}' | column -t
+echo -e "\n🌐 Active Network Connections:"
+ss -tunap | grep ESTAB | head -n 5
+echo -e "\n✅ Done. Stay sharp, SoulRa."

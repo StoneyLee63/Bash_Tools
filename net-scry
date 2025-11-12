@@ -1,0 +1,25 @@
+#!/bin/bash
+echo "🌐 Net-Scry Report - $(date)"
+echo "Scanning local subnet for active devices..."
+# Get your subnet (e.g., 192.168.1.0/24)
+SUBNET=$(ip route | grep -m1 src | awk '{print $1}')
+# Ping sweep: find live hosts
+LIVE_HOSTS=$(fping -aqg $SUBNET 2>/dev/null)
+# For each alive IP, scan ports and try to resolve name
+for IP in $LIVE_HOSTS; do
+    # Skip broadcast IPs (ends in .255)
+    [[ "$IP" == *.255 ]] && continue
+
+    # Try resolving hostname
+    NAME=$(nmblookup -A $IP 2>/dev/null | grep '<00>' | head -n1 | awk '{print $1}')
+    [[ -z "$NAME" || "$NAME" == '*' ]] && NAME=$(host $IP | awk '/domain name pointer/ {print $5}' | sed 's/\.$//')
+    [[ -z "$NAME" ]] && NAME="unknown"
+
+    # Scan for top 10 ports quietly
+    PORTS=$(nmap -Pn -T2 --top-ports 10 $IP | awk '/^[0-9]+\/tcp/ {gsub("/tcp",""); print $1}' | paste -sd "," -)
+
+    echo -e "$IP\t$NAME\t[$PORTS]"
+done
+
+echo "✅ Done scrying. Spirits revealed."
+

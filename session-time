@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "🧭 SESSION + SYSTEM TIME REPORT – $(date)"
+echo "----------------------------------------"
+echo -e "\n🖥️  System Uptime:"
+uptime -p
+echo -e "\n👤 User Session Time:"
+who -u | awk -v user="$USER" '$1 == user {print $0}'
+
