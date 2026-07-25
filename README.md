@@ -5,6 +5,7 @@ A growing collection of custom Bash scripts for:
 - System monitoring
 - Session tracking
 - Discreet network reconnaissance
+- System maintenance
 
 ## 🔧 Included Tools
 
@@ -16,6 +17,9 @@ Prints system health: CPU, RAM, disk, uptime, network
 
 ### `session-time`
 Displays how long you've been logged in
+
+### `groundwork`
+Handles system updates, upgrades, and cleanup — keeps the machine current and clear
 
 ---
 
