@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+# ============================================================
+#   GROUNDWORK — Earth Domain Maintenance Tool
+#   Echo Arts | Elemental Domain: Earth
+#   Operator: SoulRa
+# ============================================================
+
+set -euo pipefail
+
+# ── Header ───────────────────────────────────────────────────
+header() {
+  echo ""
+  echo "========================================"
+  echo "   GROUNDWORK — Earth Domain"
+  echo "   Laying the Foundation....."
+  echo "========================================"
+  echo ""
+}
+
+phase_update() {
+    echo "[Phase 1] Updating package lists..."
+    sudo apt-get update
+    echo "Done."
+}
+
+phase_upgrade() {
+    echo "[Phase 2] Upgrading installed packages..."
+    sudo apt-get upgrade -y
+    echo "Done."
+}
+
+phase_clean() {
+    echo "[Phase 3] Cleaning up.."
+    sudo apt-get autoremove -y
+    sudo apt-get autoclean -y
+    sudo apt-get clean
+    echo "Done."
+}
+
+phase_check() {
+    echo "[Check] System status..."
+    echo " Kernel  : $(uname -r)"
+    echo " Uptime  : $(uptime -p)"
+    echo " Disk    : $(df -h / | awk 'NR==2 {print $3 " used / " $2 " total (" $5 " full)"}')"
+    echo " Memory  : $(free -h | awk '/^Mem/ {print $3 " used / " $2 " total"}')"
+    echo ""
+    echo "Groundwork is clear."
+}
+
+# ── Main ─────────────────────────────────────────────────────
+main() {
+  header
+    phase_update
+    phase_upgrade
+    phase_clean
+    phase_check
+}
+
+main "$@"
