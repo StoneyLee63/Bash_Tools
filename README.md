@@ -4,7 +4,7 @@ A growing collection of custom Bash scripts for:
 
 - System monitoring
 - Session tracking
-- Discreet network reconnaissance
+- Network visibility & LAN device discovery
 - System maintenance
 
 ## 🔧 Included Tools
@@ -25,5 +25,5 @@ Handles system updates, upgrades, and cleanup — keeps the machine current and 
 
 Built for Resourceful operators who work from the terminal.
 
-> “Visibility is power. Discretion is survival.”
+> “Visibility is power. Clarity is Control.”
 
