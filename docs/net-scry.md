@@ -13,7 +13,6 @@ Net-Scry is a Bash-based LAN discovery and port-visibility tool built for Ubuntu
 |---|---|
 |**Tool Name**|Net-Scry|
 |**File**|`net-scry`|
-|**Location**|`~/projects/Bash_Tools/`|
 |**Domain**|Air|
 |**Type**|Bash Network Discovery Tool|
 |**Environment**|Ubuntu WSL|
@@ -48,7 +47,8 @@ sudo apt install fping nmap samba-common-bin dnsutils
 
 ## Usage
 ```bash
-cd ~/projects/Bash_Tools
+git clone https://github.com/StoneyLee63/Bash_Tools.git
+cd Bash_Tools
 ./net-scry
 ```
 
