@@ -13,7 +13,6 @@ Groundwork is a Bash-based system maintenance tool built for Ubuntu WSL. It hand
 |---|---|
 |**Tool Name**|Groundwork|
 |**File**|`groundwork`|
-|**Location**|`~/projects/Bash_Tools/`|
 |**Domain**|Earth|
 |**Type**|Bash Maintenance Tool|
 |**Environment**|Ubuntu WSL|
@@ -65,7 +64,8 @@ Groundwork handles the maintenance layer of the system — the unglamorous but e
 
 ## Usage
 ```bash
-cd ~/projects/Bash_Tools
+git clone https://github.com/StoneyLee63/Bash_Tools.git
+cd Bash_Tools
 ./groundwork
 ```
 
@@ -74,7 +74,6 @@ Or once installed system-wide:
 sudo cp groundwork /usr/local/bin/groundwork
 groundwork
 ```
-
 ---
 
 ## Tags
