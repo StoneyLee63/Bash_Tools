@@ -2,7 +2,6 @@
 # ============================================================
 #   GROUNDWORK — Earth Domain Maintenance Tool
 #   Echo Arts | Elemental Domain: Earth
-#   Operator: SoulRa
 # ============================================================
 
 set -euo pipefail

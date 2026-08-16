@@ -1,6 +1,5 @@
 # Groundwork
 **Echo Arts | Elemental Domain: Earth**
-**Operator: SoulRa**
 
 ---
 
@@ -18,7 +17,6 @@ Groundwork is a Bash-based system maintenance tool built for Ubuntu WSL. It hand
 |**Domain**|Earth|
 |**Type**|Bash Maintenance Tool|
 |**Environment**|Ubuntu WSL|
-|**Operator**|SoulRa|
 |**Status**|v1 Complete|
 
 ---

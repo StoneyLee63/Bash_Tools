@@ -11,4 +11,4 @@ echo -e "\n👹 Top 5 RAM-Hogs:"
 ps aux --sort=-%mem | awk 'NR<=6 {print $1, $2, $3, $4, $11}' | column -t
 echo -e "\n🌐 Active Network Connections:"
 ss -tunap | grep ESTAB | head -n 5
-echo -e "\n✅ Done. Stay sharp, SoulRa."
+echo -e "\n✅ Done. Stay sharp."
